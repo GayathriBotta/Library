@@ -1,8 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
+
 const connectDB = require("./config/db");
 
-const dotenv = require("dotenv");
 const studentRoutes = require("./routes/studentRoutes");
 const bookRoutes = require("./routes/bookRoutes");
 const issueRoutes = require("./routes/issueRoutes");
@@ -10,25 +11,36 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 
 dotenv.config();
 
-connectDB();
-
 const app = express();
 
 app.use(cors());
-
 app.use(express.json());
-app.use(cors());
-app.use("/api/dashboard",dashboardRoutes);
+
+// Connect MongoDB
+connectDB();
+
+// Routes
+app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/books", bookRoutes);
 app.use("/api/students", studentRoutes);
 app.use("/api/issues", issueRoutes);
-app.use("/api/books", bookRoutes);
+
+// Test route
 app.get("/", (req, res) => {
-    res.send("Library Management API Running...");
+  res.json({
+    success: true,
+    message: "Library Management API Running..."
+  });
 });
 
-const PORT = process.env.PORT || 5000;
+// IMPORTANT: export app for Vercel
+module.exports = app;
 
-app.listen(PORT, () => {
+// Run locally only
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+
+  app.listen(PORT, () => {
     console.log(`Server Running on Port ${PORT}`);
-});
+  });
+}
