@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* =========================================================
+   🌌 LIBRARY — GLOBAL FONT SIZE
+========================================================= */
+
+/* General application text */
+body {
+  font-size: 16px;
+}
+
+/* Headings */
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+/* Normal paragraphs */
+p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Buttons */
+button,
+.btn,
+button a {
+  font-size: 14px;
+}
+
+/* Inputs and dropdowns */
+input,
+select,
+textarea {
+  font-size: 14px;
+}
+
+/* Tables */
+table {
+  font-size: 14px;
+}
+
+th {
+  font-size: 13px;
+}
+
+td {
+  font-size: 14px;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+}
+
+/* Links */
+a {
+  font-size: 14px;
+}
+
+/* Cards */
+.card,
+.book-card,
+.student-card {
+  font-size: 14px;
+}
+
+/* Navigation */
+nav,
+.navbar,
+.sidebar {
+  font-size: 15px;
+}
+
+/* Footer */
+footer {
+  font-size: 13px;
+}
+
+/* Small text */
+small {
+  font-size: 12px;
+}
